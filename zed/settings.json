@@ -39,12 +39,6 @@
 			"!eslint",
 			"biome",
 			"..."
-		],
-
-		"formatter": ""
-		// "prettier": {
-		//   "allowed": true,
-		//   "plugins": [""]
-		// }
+		]
 	}
 }
