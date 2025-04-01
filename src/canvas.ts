@@ -1,20 +1,34 @@
-export function setupCanvas(canvas: HTMLCanvasElement) {
-	canvas.addEventListener('click', () => console.log(canvas))
-	const canvasContext = canvas.getContext('2d')
+export function setupCanvas({
+  canvas,
+  device,
+  gpu,
+}: {
+  canvas: HTMLCanvasElement;
+  adapter: GPUAdapter;
+  device: GPUDevice;
+  gpu: GPU;
+}) {
+  // Get context
+  const canvasContextWebGPU = canvas.getContext("webgpu");
+  if (!canvasContextWebGPU)
+    throw new Error(
+      `Could not retrieve webgpu canvas context for ${canvas}, with device ${device}`,
+    );
 
-	canvas.width = window.innerWidth
-	canvas.height = window.innerHeight
+  // Set canvas UV
+  const aspectRatio = window.devicePixelRatio;
+  canvas.width = canvas.clientWidth * aspectRatio;
+  canvas.height = canvas.clientHeight * aspectRatio;
 
-	// Redraw canvas on resize
-	window.addEventListener('resize', () => {
-		canvas.width = window.innerWidth
-		canvas.height = window.innerHeight
-	})
+  // Set presentation format
+  const presentationFormat = gpu.getPreferredCanvasFormat();
+  canvasContextWebGPU.configure({
+    device,
+    format: presentationFormat,
+  });
 
-	if (canvasContext === null) {
-		throw new Error('Canvas context is null')
-	}
-
-	canvasContext.fillStyle = 'red'
-	canvasContext.fillRect(50, 50, 100, 100)
+  window.addEventListener("resize", (resizeEvent) => {
+    // TODO
+    console.log(resizeEvent);
+  });
 }
