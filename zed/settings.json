@@ -1,26 +1,26 @@
 {
   "lsp": {
-    "deno": {
-      "enable": false
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
     }
+  },
+  "language_servers": [
+    "biome", "..."
+  ],
+  "formatter": {
+    "language_server": {
+      "name": "biome"
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
   },
   "languages": {
     "TypeScript": {
       "language_servers": [
-        "!deno",
-        "!typescript-language-server",
-        "!vtsls",
-        "!eslint",
-        "biome"
-      ],
-      "formatter": "language_server"
-    },
-    "JavaScript": {
-      "language_servers": [
-        "!deno",
-        "!typescript-language-server",
-        "!vtsls",
-        "!eslint",
         "biome"
       ],
       "formatter": "language_server"
@@ -28,10 +28,6 @@
     "TSX": {
       // "soft_wrap": "none"
       "language_servers": [
-        "!deno",
-        "!typescript-language-server",
-        "!vtsls",
-        "!eslint",
         "biome"
       ],
       "formatter": "language_server"
