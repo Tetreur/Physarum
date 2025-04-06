@@ -1,0 +1,35 @@
+{
+  "version": "0.2",
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "words": [
+    "turbopack",
+    "physarum"
+  ],
+  "enableFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "markdown",
+    "mdx",
+    "json"
+  ],
+  "files": [
+    ".changeset/*.md",
+    "**/*.md",
+    "**/*.mdx",
+    "**/*.json",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "useGitignore": true,
+  "overrides": [],
+  "import": [
+    "@cspell/dict-fr-fr/cspell-ext.json"
+  ],
+  "ignorePaths": []
+}
