@@ -3,7 +3,11 @@
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "words": [
     "turbopack",
-    "physarum"
+    "physarum",
+    "vercel",
+    "nextjs",
+    "noreferrer",
+    "noopener"
   ],
   "enableFiletypes": [
     "javascript",
@@ -28,8 +32,5 @@
   ],
   "useGitignore": true,
   "overrides": [],
-  "import": [
-    "@cspell/dict-fr-fr/cspell-ext.json"
-  ],
   "ignorePaths": []
 }
