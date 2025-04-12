@@ -1,4 +1,4 @@
-import { Brain, SquareArrowOutUpRight } from 'lucide-react'
+import { Brain, Github } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
 import { Drawer } from 'vaul'
 
@@ -9,9 +9,10 @@ export function DrawerComponent() {
 				className={twMerge(
 					'cursor-pointer',
 					'absolute right-1/2 bottom-5 translate-x-1/2',
-					'rounded-full',
+					'p-2',
+					'bg-black',
 					'text-sm font-mono text-neutral-500 hover:text-neutral-100',
-					'transition-all duration-300 ease-in-out',
+					'transition-colors duration-300 ease-in-out',
 				)}
 			>
 				<Brain size={16} />
@@ -20,14 +21,13 @@ export function DrawerComponent() {
 				<Drawer.Overlay className="fixed inset-0 bg-black/20" />
 				<Drawer.Content
 					className={twMerge(
-						'font-mono',
-						'bg-neutral-950 text-neutral-400',
+						'font-mono text-sm text-neutral-400',
+						'rounded-lg',
 						'flex flex-col',
-						'rounded-xl overflow-clip',
+						'overflow-clip',
 						'outline-none border border-neutral-900',
-						'mt-24 h-fit fixed bottom-4 left-0 right-0',
+						'mt-24 h-fit fixed bottom-4',
 						'w-1/2 right-1/2 translate-x-1/2',
-						'text-sm',
 					)}
 					style={
 						{
@@ -43,16 +43,16 @@ export function DrawerComponent() {
 						It is a fascinating organism that has been studied for its unique
 						behavior and ability to adapt to its environment.
 					</div>
-					<div className="p-4 border-t border-gray-900 mt-auto">
-						<div className="flex gap-6 justify-end max-w-md mx-auto">
+					<div className="p-6 border-t border-neutral-900">hey</div>
+					<div className="px-6 py-2 border-t border-neutral-900 bg-neutral-950 mt-auto">
+						<div className="flex gap-6 justify-end text-xs">
 							<a
 								className="text-xs flex items-center gap-1.5 hover:text-neutral-100"
 								href="https://github.com/Tetreur/Physarum"
 								target="_blank"
 								rel="noreferrer"
 							>
-								{' '}
-								GitHub <SquareArrowOutUpRight size={9} />
+								<Github size={16} />
 							</a>
 						</div>
 					</div>
@@ -60,22 +60,4 @@ export function DrawerComponent() {
 			</Drawer.Portal>
 		</Drawer.Root>
 	)
-
-	// {/* <Drawer.Content>
-	// 	<a
-	// 		className="flex items-center gap-1 hover:underline hover:underline-offset-4 text-xs text-gray-500"
-	// 		href="https://cargocollective.com/sagejenson/physarum"
-	// 		target="_blank"
-	// 		rel="noopener noreferrer"
-	// 	>
-	// 		<Image
-	// 			aria-hidden
-	// 			src="/brain.svg"
-	// 			alt="brain icon"
-	// 			width={16}
-	// 			height={16}
-	// 		/>
-	// 		Physarum
-	// 	</a>
-	// </Drawer.Content> */}
 }
