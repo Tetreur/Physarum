@@ -1,1 +1,3 @@
-export * from "./drawer";
+export * from './Canvas';
+export * from "./Drawer";
+

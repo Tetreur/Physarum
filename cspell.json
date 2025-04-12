@@ -9,6 +9,7 @@
     "turbopack",
     "vaul",
     "vercel",
+    "webgpu",
     "wgsl"
   ],
   "enableFiletypes": [

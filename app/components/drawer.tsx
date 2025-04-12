@@ -1,10 +1,21 @@
+import { Info } from 'lucide-react'
+import { twMerge } from 'tailwind-merge'
 import { Drawer } from 'vaul'
 
 export function DrawerComponent() {
 	return (
 		<Drawer.Root>
-			<Drawer.Trigger className="relative flex h-10 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-4 text-sm font-medium shadow-sm transition-all hover:bg-[#FAFAFA] dark:bg-[#161615] dark:hover:bg-[#1A1A19] dark:text-white">
-				Open Drawer
+			<Drawer.Trigger
+				className={twMerge(
+					'ring',
+					'h-6 gap-2 px-2',
+					'shadow-sm rounded-full bg-white text-sm font-medium',
+					'relative flex flex-shrink-0 items-center gap-2 justify-center',
+					'transition-all hover:bg-[#FAFAFA] dark:bg-[#161615] dark:hover:bg-[#1A1A19] dark:text-white',
+				)}
+			>
+				<Info size={16} />
+				more info
 			</Drawer.Trigger>
 			<Drawer.Portal>
 				<Drawer.Overlay className="fixed inset-0 bg-black/40" />
@@ -21,22 +32,7 @@ export function DrawerComponent() {
 							</Drawer.Title>
 							<p className="text-gray-600 mb-2">
 								This component can be used as a Dialog replacement on mobile and
-								tablet devices.You can read about why and how it was built ;('
-								')
-								<a
-									target="_blank"
-									className="underline"
-									href="https://emilkowal.ski/ui/building-a-drawer-component"
-									rel="noreferrer"
-								>
-									here
-								</a>
-								.
-							</p>
-							<p className="text-gray-600 mb-2">
-								{' '}
-								This one specifically is the most simplest setup you can have,
-								just a simple drawer with a trigger.
+								tablet devices.
 							</p>
 						</div>
 					</div>
