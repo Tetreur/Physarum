@@ -79,8 +79,8 @@ function Trigger({
 		>
 			<Icon
 				ref={root}
-				size={60}
-				className="logo stroke-[5px] hover:text-neutral-50"
+				size={80}
+				className="logo stroke-[7px] hover:text-neutral-50"
 			/>
 		</Drawer.Trigger>
 	)

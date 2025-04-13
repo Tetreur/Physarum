@@ -7,7 +7,7 @@ export function DrawerComponent() {
 	return (
 		<div
 			className={twMerge(
-				'absolute w-full bottom-0 h-2/12',
+				'absolute w-full bottom-0 h-4/12',
 				'group',
 				'overflow-clip',
 			)}
