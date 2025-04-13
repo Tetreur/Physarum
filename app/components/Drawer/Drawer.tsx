@@ -25,7 +25,7 @@ export function DrawerComponent() {
 							'overflow-clip',
 							'outline-none border border-neutral-900',
 							'mt-24 h-fit fixed bottom-4',
-							'w-1/2 right-1/2 translate-x-1/2',
+							'w-[400px] right-1/2 translate-x-1/2',
 						)}
 						style={
 							{
