@@ -1,6 +1,7 @@
 import { Brain, Github } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
 import { Drawer } from 'vaul'
+import { Switch } from './Switch'
 
 export function DrawerComponent() {
 	return (
@@ -10,8 +11,10 @@ export function DrawerComponent() {
 					'cursor-pointer',
 					'absolute right-1/2 bottom-5 translate-x-1/2',
 					'p-2',
-					'bg-black',
-					'text-sm font-mono text-neutral-500 hover:text-neutral-100',
+					'rounded-sm',
+					'border border-black hover:border-neutral-900',
+					'bg-black hover:bg-neutral-950',
+					'text-sm font-mono text-neutral-500 hover:text-neutral-300',
 					'transition-colors duration-300 ease-in-out',
 				)}
 			>
@@ -23,6 +26,7 @@ export function DrawerComponent() {
 					className={twMerge(
 						'font-mono text-sm text-neutral-400',
 						'rounded-lg',
+						'bg-black',
 						'flex flex-col',
 						'overflow-clip',
 						'outline-none border border-neutral-900',
@@ -43,7 +47,12 @@ export function DrawerComponent() {
 						It is a fascinating organism that has been studied for its unique
 						behavior and ability to adapt to its environment.
 					</div>
-					<div className="p-6 border-t border-neutral-900">hey</div>
+
+					{/* <Engine Switches> */}
+					<div className="p-6 border-t border-neutral-900">
+						<Switch id="webgpu" />
+					</div>
+
 					<div className="px-6 py-2 border-t border-neutral-900 bg-neutral-950 mt-auto">
 						<div className="flex gap-6 justify-end text-xs">
 							<a
@@ -52,7 +61,7 @@ export function DrawerComponent() {
 								target="_blank"
 								rel="noreferrer"
 							>
-								<Github size={16} />
+								<Github size={14} />
 							</a>
 						</div>
 					</div>
