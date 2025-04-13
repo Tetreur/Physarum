@@ -77,7 +77,11 @@ function Trigger({
 				'rounded-xs',
 			)}
 		>
-			<Icon ref={root} size={60} className="logo" />
+			<Icon
+				ref={root}
+				size={60}
+				className="logo stroke-[5px] hover:text-neutral-50"
+			/>
 		</Drawer.Trigger>
 	)
 }
@@ -103,7 +107,7 @@ function Icon(
 		>
 			<title>more info</title>
 			<polygon
-				className="stroke-1 hover:stroke-[30px]"
+				style={{ opacity: 1 }}
 				id="path-1"
 				points="152,4 170,38 204,56 170,74 152,108 134,74 100,56 134,38"
 			/>
