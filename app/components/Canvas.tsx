@@ -7,45 +7,31 @@ export const Canvas = () => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null)
 	const [isWebGL2Supported, setIsWebGL2Supported] = useState<boolean>(false)
 	const [isWebGPUSupported, setIsWebGPUSupported] = useState<boolean>(false)
+	const canvas = canvasRef.current
+
+	if (!canvas) {
+		return null
+	}
 
 	useEffect(() => {
 		const setupWebGPU = async () => {
-			const canvas = canvasRef.current
-			if (canvas) {
-				console.log(triangleVertex)
-				const webgl2CanvasCtx = canvas.getContext('webgl2')
-				const webGPUCanvasCtx = canvas.getContext('webgpu')
+			console.log(triangleVertex)
+			const webgl2CanvasCtx = canvas.getContext('webgl2')
+			const webGPUCanvasCtx = canvas.getContext('webgpu')
 
-				if (webGPUCanvasCtx) {
-				} else if (webgl2CanvasCtx) {
-				} else {
-					setIsWebGL2Supported(false)
-					setIsWebGPUSupported(false)
-					return
-				}
-
-				try {
-					const gl = canvas.getContext('webgpu')
-					const adapter = await navigator.gpu?.requestAdapter({
-						featureLevel: 'compatibility',
-					})
-					const device = await adapter?.requestDevice()
-
-					if (!device) {
-						setIsWebGPUSupported(false)
-						return
-					}
-
-					setIsWebGPUSupported(!!gl)
-					setupCanvas(canvas, device)
-				} catch (e) {
-					setIsWebGPUSupported(false)
-				}
+			if (webGPUCanvasCtx) {
+				console.log('WebGPU is supported')
+				setIsWebGPUSupported(true)
+			} else if (webgl2CanvasCtx) {
+				console.log('WebGL2 is supported')
+				setIsWebGL2Supported(true)
 			}
 		}
 
 		setupWebGPU()
-	}, [])
+	}, [canvas])
+
+	// setupCanvas(canvas, device)
 
 	return <canvas ref={canvasRef} className="w-full h-full" />
 }
