@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       test: /\.wgsl$/i,
       use: "raw-loader",
     });
-          
+        return config
   },
   experimental: {
     turbo: {
