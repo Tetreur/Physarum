@@ -67,7 +67,7 @@ function Trigger({
 			className={twMerge(
 				'cursor-pointer',
 				'absolute translate-x-1/2 right-1/2',
-				'bottom-5 sm:-bottom-18',
+				'bottom-4 sm:-bottom-22',
 				'group-hover:bottom-5',
 				'border border-black hover:border-neutral-900',
 				'bg-black hover:bg-neutral-950',
