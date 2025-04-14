@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { setupWebGL2 } from './setup-webgl2'
 
 export const Canvas = () => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -51,17 +52,4 @@ export const Canvas = () => {
 	// }
 
 	return <canvas ref={canvasRef} className="w-full h-full" />
-}
-
-function setupWebGL2(canvas: HTMLCanvasElement) {
-	console.log('Setting up WebGL2')
-	const gl = canvas.getContext('webgl2')
-	if (!gl) {
-		console.error('HAAA')
-		return
-	}
-
-	// GL as multiple layers, here we clear the color and depth buffers
-	gl.clearColor(0.5, 0.5, 0.5, 1.0) // Set clear color to black, fully opaque
-	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 }
